@@ -4,8 +4,8 @@
 \name{loopr}
 \alias{loopr}
 \alias{loopr-package}
-\title{Describe the package.}
+\title{R client for https://github.com/avantcredit/loop}
 \description{
-Describe the package.
+R client for https://github.com/avantcredit/loop
 }
 
