@@ -1,6 +1,6 @@
 #' R client for https://github.com/avantcredit/loop
 #'
 #' @name loopr
-#' @import httr
+#' @import httr crayon
 #' @docType package
 NULL
