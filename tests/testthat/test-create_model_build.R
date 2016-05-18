@@ -17,6 +17,7 @@ describe('with mocked server context', {
       expect_equal(model_build$params$name, names(params))
       expect_equal(model_build$params$type, c('int', 'float', 'enum'))
       expect_false(model_build$minimize)
-    })
+    }),
+    .env = "loopr"
   )
 })

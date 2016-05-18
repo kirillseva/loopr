@@ -22,7 +22,8 @@ describe('with mocked server context', {
     happy = list(params = list(a = 1, b = 2, c = "hello"), loop_id = 42)
     with_mock(
       `get_new_iteration` = function(...) happy,
-      expect_equal(new_iteration('boom'), happy)
+      expect_equal(new_iteration('boom'), happy),
+      .env = "loopr"
     )
   })
 })
