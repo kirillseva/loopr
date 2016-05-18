@@ -10,3 +10,11 @@ create_model_build <- function(params, minimize = FALSE) {
 reformat_params <- function(params) {
   lapply(names(params), function(nm) { append(list(name = nm), params[[nm]]) })
 }
+
+post_new_model <- function(payload) {
+  content(POST(
+    paste0(LOOP_URL(), NEW_MODEL_PATH),
+    body = payload,
+    content_type_json()
+  ))
+}
