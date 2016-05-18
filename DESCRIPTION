@@ -12,7 +12,9 @@ Depends:
 License: MIT
 LazyData: true
 Imports:
-    httr
+    httr,
+    crayon,
+    jsonlite
 Suggests:
     testthat
 Roxygen: list(wrap = FALSE)
