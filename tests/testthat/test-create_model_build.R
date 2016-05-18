@@ -18,6 +18,9 @@ describe('with mocked server context', {
       expect_equal(model_build$params$type, c('int', 'float', 'enum'))
       expect_false(model_build$minimize)
     }),
+    test_that('it errors out on weird inputs', {
+      expect_error(create_model_build("hello"), "params must be a list of hyperparameters you'll use for training.")
+    }),
     .env = "loopr"
   )
 })
