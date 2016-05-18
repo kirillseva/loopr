@@ -9,8 +9,5 @@ new_iteration <- function(id) {
 }
 
 get_new_iteration <- function(id) {
-  res <- GET(paste0(LOOP_URL(), NEW_ITERATION_PATH, id), verbose())
-  if (status_code(res) == 404) {
-    list(exception = "Server replied with a 404")
-  } else { content(res) }
+  content_or_404(GET(paste0(LOOP_URL(), NEW_ITERATION_PATH, id), verbose()))
 }

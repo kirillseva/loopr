@@ -5,7 +5,7 @@ describe('with mocked server context', {
     with_mock(
       `httr::GET` = function(...) TRUE,
       `httr::status_code` = function(...) 404,
-      expect_error(new_iteration('boom'), 'Server replied with a 404')
+      expect_error(new_iteration('boom'), 'Server replied with an error code 404')
     )
   })
 
