@@ -9,5 +9,5 @@ new_iteration <- function(id) {
 }
 
 get_new_iteration <- function(id) {
-  content_or_404(GET(paste0(LOOP_URL(), NEW_ITERATION_PATH, id), verbose()))
+  content_or_404(GET(paste0(LOOP_URL(), NEW_ITERATION_PATH, id)))
 }
