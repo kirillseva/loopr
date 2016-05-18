@@ -2,7 +2,7 @@ context('create model build')
 
 describe('with mocked server context', {
   with_mock(
-    post_new_model = function(payload) {
+    `post_new_model` = function(payload) {
       expect_is(payload, 'json')
       jsonlite::fromJSON(payload)
     },
