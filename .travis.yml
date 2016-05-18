@@ -6,5 +6,6 @@ r_github_packages:
   - jimhester/covr
   - hadley/devtools
   - hadley/httr
+  - hadley/testthat
 after_success:
   - Rscript -e 'covr::codecov()'
