@@ -22,27 +22,3 @@ summarize <- function(params, value, duration, iteration) {
     "Value: ", value, "\n==========\n"
   )
 }
-
-
-
-# loop(
-#   train_fn = function(df, params) {
-#     max_row <- floor(NROW(df) * params$downsample)
-#     prep_df <- head(df, max_row)
-#     prep_df$offset <- params$offset
-#     cls <- lm(Sepal.Length ~ Sepal.Width, data = prep_df, offset = offset)
-#     list(predict = function(df) {unname(predict(cls, df))})
-#   },
-#   params = list(
-#     offset     = loopr_float(min = -2, max = 2, num_points = 1000),
-#     downsample = loopr_float(min = 0.2, max = 1, num_points = 100)
-#   ),
-#   metric = function(cls, validation, dep_var = "dep_var") {
-#     rmse_metric <- function(actual, predicted) { sqrt(mean((actual - predicted)^2)) }
-#     rmse_metric(validation[[dep_var]], cls$predict(validation))
-#   },
-#   validation_df = validation_df,
-#   train_df      = train_df,
-#   iterations    = 50,
-#   minimize      = FALSE
-# ) -> evaluation
