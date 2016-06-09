@@ -20,14 +20,14 @@ loop(
     })
   },
   params = list(
-    alpha  = loopr_float(min = 0, max = 1, num_points = 1000)
+    alpha = loopr_float(min = 0, max = 1, num_points = 1000)
   ),
   metric = function(cls, validation, dep_var = "dep_var") {
     rmse_metric <- function(actual, predicted) { sqrt(mean((actual - predicted)^2)) }
-    as.numeric(pROC::auc(validation$dep_var, cls$predict(validation)))
+    as.numeric(rmse_metric(validation$dep_var, cls$predict(validation)))
   },
   validation_df = validation_df,
   train_df      = train_df,
   iterations    = 50,
-  minimize      = FALSE
+  minimize      = TRUE
 ) -> evaluation

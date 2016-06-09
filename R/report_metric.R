@@ -15,7 +15,7 @@ report_metric <- function(id, loop_id, value, duration = NULL) {
 }
 
 post_report_metric <- function(id, loop_id, value, duration) {
-  payload <- jsonlite::toJSON(Filter(Negate(is.null), list(loop_id = loop_id, value = value, duration = duration)), auto_unbox = TRUE)
+  payload <- jsonlite::toJSON(Filter(Negate(is.null), list(loop_id = loop_id, value = value, duration = duration)), auto_unbox = TRUE, digits = 10)
   res <- POST(
     paste0(LOOP_URL(), REPORT_METRIC_PATH, id),
     body = payload,
