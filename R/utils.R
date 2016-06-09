@@ -29,3 +29,8 @@ content_or_404 <- function(res) {
 }
 
 `%||%` <- function(x, y) { if (is.null(x)) y else x }
+
+loopr_cache <- new.env()
+
+#' @export
+fetch_latest_params <- function() { loopr_cache$latest_params }
