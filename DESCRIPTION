@@ -14,8 +14,11 @@ LazyData: true
 Imports:
     httr,
     crayon,
-    jsonlite
+    jsonlite,
+    recombinator
 Suggests:
     testthat
 Roxygen: list(wrap = FALSE)
 RoxygenNote: 5.0.1.9000
+Remotes:
+    robertzk/recombinator@0.1.3

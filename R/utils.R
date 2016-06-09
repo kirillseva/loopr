@@ -33,4 +33,6 @@ content_or_404 <- function(res) {
 loopr_cache <- new.env()
 
 #' @export
-fetch_latest_params <- function() { loopr_cache$latest_params }
+latest_params <- function() { loopr_cache$latest_params }
+#' @export
+latest_grid <- function() { loopr_cache$latest_grid }
