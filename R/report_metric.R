@@ -1,5 +1,10 @@
 #' @export
-report_metric <- function(id, loop_id, value, duration = NULL) {
+report_metric <- function(id, loop_id, value, duration) {
+  if (missing(duration)) {
+    duration <- if (loopr$cache$latest_params$loop_id == loop_id) {
+      as.numeric(Sys.time()) - loopr_cache$latest_params$timestamp
+    } else { NULL }
+  }
   result <- post_report_metric(id, loop_id, value, duration)
   report_error(result$exception)
   if (result$status %||% "" != "ok") {

@@ -6,7 +6,7 @@ df$Class <- NULL
 train_df <- head(df, 40000)
 validation_df <- df[40001:58000, ]
 
-loop(
+loopr:::loop(
   train_fn = function(dataframe, params) {
     df <- dataframe[, setdiff(names(dataframe), 'dep_var'), drop = FALSE]
     x  <- model.matrix(formula('~.'), data = df)

@@ -6,6 +6,7 @@ new_iteration <- function(id) {
   result <- get_new_iteration(id)
   report_error(result$exception)
   loopr_cache$latest_params <- result
+  loopr_cache$latest_params$timestamp <- as.numeric(Sys.time())
   result
 }
 

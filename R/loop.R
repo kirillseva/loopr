@@ -1,4 +1,3 @@
-#' @export
 loop <- function(train_fn, params, metric, train_df, validation_df, iterations, minimize) {
   model_id <- create_model_build(params, minimize = minimize)$id
   message(crayon::green(paste0("Building ", iterations, " models for model build <", model_id, ">:")))

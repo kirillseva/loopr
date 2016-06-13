@@ -3,7 +3,6 @@
 export(create_model_build)
 export(latest_grid)
 export(latest_params)
-export(loop)
 export(loopr_enum)
 export(loopr_float)
 export(loopr_integer)
