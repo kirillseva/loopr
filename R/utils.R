@@ -8,7 +8,9 @@ get_option <- function(opt) {
 }
 
 #' @export
-loopr_integer <- function(min, max) { list(min = min, max = max, type = "int") }
+loopr_integer <- function(min, max, num_points = NULL) {
+  list(min = min, max = max, num_points = num_points %||% NA, type = "int")
+}
 #' @export
 loopr_float   <- function(min, max, num_points) { list(num_points = num_points, min = min, max = max, type = "float") }
 #' @export
