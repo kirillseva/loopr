@@ -1,7 +1,7 @@
 #' @export
 report_metric <- function(id, loop_id, value, duration) {
   if (missing(duration)) {
-    duration <- if (loopr$cache$latest_params$loop_id == loop_id) {
+    duration <- if (loopr_cache$latest_params$loop_id == loop_id) {
       as.numeric(Sys.time()) - loopr_cache$latest_params$timestamp
     } else { NULL }
   }

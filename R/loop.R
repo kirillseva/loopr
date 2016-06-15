@@ -5,7 +5,7 @@ loop <- function(train_fn, params, metric, train_df, validation_df, iterations, 
     iteration <- new_iteration(model_id)
     duration <- as.numeric(system.time(cls <- train_fn(train_df, iteration$params))[3])
     value  <- metric(cls, validation_df, "Sepal.Length")
-    report_metric(model_id, iteration$loop_id, value, duration)
+    report_metric(model_id, iteration$loop_id, value)
     summarize(iteration$params, value, duration, idx)
     list(classifier = cls, metric_value = value, duration = duration)
   }))
