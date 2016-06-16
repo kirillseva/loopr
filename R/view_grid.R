@@ -8,7 +8,7 @@ view_grid <- function(id) {
   suppressWarnings(grid <- recombinator::recombinator(jsonlite::fromJSON(result$grid)))
   rownames(grid) <- NULL
   loopr_cache$latest_grid <- grid
-  grid
+  list(grid = grid, minimize = isTRUE(result$minimize))
 }
 
 get_grid <- function(id) {
