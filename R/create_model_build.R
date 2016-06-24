@@ -1,9 +1,10 @@
 #' @export
-create_model_build <- function(params, minimize = FALSE) {
+create_model_build <- function(params, minimize = FALSE, name = NULL, chooser = NULL) {
   if (!is.list(params) || length(params) == 0) {
     stop('params must be a list of hyperparameters you\'ll use for training.')
   }
-  payload <- jsonlite::toJSON(list(params = reformat_params(params), minimize = minimize), auto_unbox = TRUE, digits = 10)
+  payload <- list(params = reformat_params(params), minimize = minimize, name = name, chooser = chooser)
+  payload <- jsonlite::toJSON(Filter(Negate(is.null), payload), auto_unbox = TRUE, digits = 10)
   post_new_model(payload)
 }
 

@@ -1,5 +1,5 @@
-loop <- function(train_fn, params, metric, train_df, validation_df, iterations, minimize) {
-  model_id <- create_model_build(params, minimize = minimize)$id
+loop <- function(train_fn, params, metric, train_df, validation_df, iterations, minimize, name = NULL) {
+  model_id <- create_model_build(params, minimize = minimize, name = name)$id
   message(crayon::green(paste0("Building ", iterations, " models for model build <", model_id, ">:")))
   invisible(lapply(seq_len(iterations), function(idx) {
     iteration <- new_iteration(model_id)

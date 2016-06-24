@@ -29,5 +29,6 @@ loopr:::loop(
   validation_df = validation_df,
   train_df      = train_df,
   iterations    = 50,
-  minimize      = TRUE
+  minimize      = TRUE,
+  name          = "Demo demo"
 ) -> evaluation
